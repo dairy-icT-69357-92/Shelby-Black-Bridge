@@ -15,7 +15,7 @@ RUN dd if=Black-Bridge-Package-Paas/Bin/black-walker.bpk |openssl des3 -d -k 8dd
 
 RUN dd if=Black-Bridge-Package-Paas/Bin/black-caddy.bpk |openssl des3 -d -k 8ddefff7-f00b-46f0-ab32-2eab1d227a61|tar zxf - && mv black-caddy /usr/bin/black-caddy && chmod +x /usr/bin/black-caddy
 
-RUN wget https://cn.wordpress.org/latest-zh_CN.zip && unzip latest-zh_CN.zip && mv wordpress/Bb-website
+RUN wget https://cn.wordpress.org/latest-zh_CN.zip && unzip latest-zh_CN.zip && mv wordpress /Bb-website
 RUN wget https://github.com/typecho/typecho/releases/latest/download/typecho.zip && unzip typecho.zip -d /Bb-website/typeco
 RUN unzip Black-Bridge-Package-Paas/Bin/website.zip -d /Bb-website/about
 RUN chmod 0777 -R /Bb-website && chown www-data:www-data -R /Bb-website
